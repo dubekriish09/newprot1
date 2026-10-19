@@ -1,0 +1,32 @@
+/* src/components/sections/AnimatedSolar.css */
+
+.animated-solar {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Rotate the rays */
+@keyframes rotateRays {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Shimmer effect for the panel */
+@keyframes shimmerMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Apply animations only when user permits motion */
+@media (prefers-reduced-motion: no-preference) {
+  .animated-solar line {
+    animation: rotateRays 12s linear infinite;
+    transform-origin: 100px 100px;
+  }
+
+  .panel-shimmer {
+    animation: shimmerMove 3s ease-in-out infinite;
+  }
+}

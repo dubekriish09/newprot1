@@ -1,0 +1,46 @@
+/* src/styles/theme.css */
+
+:root {
+  /* Primary palette (from logo) */
+  --color-primary: #0a3d62;   /* royal blue */
+  --color-accent: #d4af37;    /* gold */
+  --color-text: #333333;      /* dark grey for body text */
+  --color-background: #ffffff; /* white */
+  --color-dark-section: #0a1a30; /* deep navy */
+  --color-success: #2e8b57;   /* solar green for positive indicators */
+
+  /* Spacing scale */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  /* Font families */
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+/* Global resets and basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
