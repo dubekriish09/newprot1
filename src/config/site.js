@@ -1,18 +1,14 @@
-// src/config/site.js
-// Single source of truth for business details and placeholders
-
 export const SITE_CONFIG = {
-  businessName: "ShriRam Enterprises",
-  tagline: "Solar Solutions",
-  logoPath: "/public/images/logo.png", // referenced from public folder
+  businessName: "Shriram Solar Solutions",
+  tagline: "Smarter rooftop solar for homes and businesses",
+  logoPath: "/images/logo.png",
   address: "A-19 RJ Puram Main Road, Purohit Market, Abhinandan Vatika, Pinto Park Road, Deen Dayal Nagar, Gwalior - 474005, Madhya Pradesh, India",
-  phone: "PHONE_PLACEHOLDER",
-  whatsapp: "WHATSAPP_PLACEHOLDER",
-  email: "EMAIL_PLACEHOLDER",
-  // Google Maps URL generated from address (URL‑encoded)
+  // Replace these with verified business contact details before launch.
+  phone: "",
+  whatsapp: "",
+  email: "",
   get googleMapsUrl() {
-    const encoded = encodeURIComponent(this.address);
-    return `https://www.google.com/maps/search/?api=1&query=${encoded}`;
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(this.address);
   },
   audience: ["residential", "commercial", "industrial"],
   primaryGoal: "generate qualified solar installation enquiries",
