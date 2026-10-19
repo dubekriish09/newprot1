@@ -1,37 +1,14 @@
-// src/components/layout/Footer.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import { SITE_CONFIG } from "../../config/site.js";
 
-function Footer() {
-  return (
-    <footer className="footer" style={{ backgroundColor: "var(--color-dark-section)", color: "#fff", padding: "var(--space-lg) 0" }}>
-      <div className="container footer__inner" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "var(--space-md)" }}>
-        <h2>{SITE_CONFIG.businessName}</h2>
-        <address style={{ textAlign: "center" }}>{SITE_CONFIG.address}</address>
-        <div className="footer__contacts" style={{ display: "flex", gap: "var(--space-md)" }}>
-          <a href={`tel:${SITE_CONFIG.phone}`} style={{ color: "#fff" }}>Phone: {SITE_CONFIG.phone}</a>
-          <a href={`mailto:${SITE_CONFIG.email}`} style={{ color: "#fff" }}>Email: {SITE_CONFIG.email}</a>
-        </div>
-        <a
-          href={SITE_CONFIG.googleMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            padding: "var(--space-xs) var(--space-sm)",
-            backgroundColor: "var(--color-primary)",
-            borderRadius: "4px",
-            color: "#fff",
-            textDecoration: "none",
-          }}
-        >
-          <span style={{ marginRight: "4px" }}>📍</span> View on Google Maps
-        </a>
-        <p style={{ fontSize: "0.85rem", marginTop: "var(--space-sm)" }}>© {new Date().getFullYear()} {SITE_CONFIG.businessName}. All rights reserved.</p>
-      </div>
-    </footer>
-  );
+export default function Footer() {
+  return <footer className="site-footer">
+    <div className="footer-inner">
+      <div><Link to="/" className="footer-brand">{SITE_CONFIG.businessName}</Link><p>{SITE_CONFIG.tagline}</p><p className="footer-address">{SITE_CONFIG.address}</p><a href={SITE_CONFIG.googleMapsUrl} target="_blank" rel="noreferrer">View location on Google Maps ↗</a></div>
+      <div><h2>Explore</h2><div className="footer-links"><Link to="/residential">Residential solar</Link><Link to="/commercial">Commercial & industrial</Link><Link to="/calculator">Savings calculator</Link><Link to="/projects">Projects</Link><Link to="/faq">FAQs</Link><Link to="/privacy">Privacy policy</Link></div></div>
+      <div><h2>Enquiries</h2><p>Talk to us about your property and electricity needs.</p><Link className="button button--secondary" to="/contact">Request a quote</Link>{SITE_CONFIG.phone && <p><a href={"tel:" + SITE_CONFIG.phone}>{SITE_CONFIG.phone}</a></p>}{SITE_CONFIG.email && <p><a href={"mailto:" + SITE_CONFIG.email}>{SITE_CONFIG.email}</a></p>}</div>
+    </div>
+    <div className="footer-bottom">© {new Date().getFullYear()} {SITE_CONFIG.businessName}. All rights reserved. <span>Estimates are indicative and subject to site assessment.</span></div>
+  </footer>;
 }
-
-export default Footer;
